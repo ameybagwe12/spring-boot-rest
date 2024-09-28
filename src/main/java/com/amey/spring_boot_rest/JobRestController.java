@@ -34,7 +34,8 @@ public class JobRestController {
          return service.getJob(postId);
     }
 
-    @PostMapping("/jobPost")
+    // CONSUMES ONLY XML (, consumes = {"application/xml"})
+    @PostMapping(value = "/jobPost")
     // REQUEST BODY FOR POST REQUEST
     // RETURN FOR CONFIRMATION
     public JobPost addJob(@RequestBody JobPost jobPost) {
