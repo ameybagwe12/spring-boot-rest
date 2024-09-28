@@ -1,15 +1,20 @@
 package com.amey.spring_boot_rest.repo;
 
 import com.amey.spring_boot_rest.model.JobPost;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
-import java.util.List;
+// import java.util.ArrayList;
+// import java.util.List;
 
 @Repository
-public class JobRepo {
+public interface JobRepo extends JpaRepository<JobPost,Integer> {
 
-	List<JobPost> jobs = new ArrayList<>();
+}
+
+/*
+
+List<JobPost> jobs = new ArrayList<>();
 
 	// ****************************************************************************
 
@@ -148,4 +153,5 @@ public class JobRepo {
 			}
 		}
 	}
-}
+
+*/
