@@ -23,7 +23,7 @@ public class JobService {
 	}
 
 	public JobPost getJob(int postId) {
-		return repo.findById(postId).orElse(new JobPost());
+		return repo.findById(postId).orElseThrow();
 	}
 
 	public void updateJobPost(JobPost jobPost) {
@@ -121,5 +121,9 @@ public class JobService {
 						6, List.of("Project Management", "Agile", "Scrum", "Risk Management")));
 
 		repo.saveAll(jobs);
+	}
+
+	public List<JobPost> search(String keyword) {
+		return repo.findByPostProfileContainingOrPostDescContaining(keyword, keyword);
 	}
 }

@@ -21,6 +21,7 @@ public class JobPost {
     private String postDesc;
     private List<String> postTechStack;
 
+
     public int getPostId() {
         return postId;
     }

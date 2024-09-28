@@ -34,6 +34,11 @@ public class JobRestController {
          return service.getJob(postId);
     }
 
+    @GetMapping("jobPosts/keyword/{keyword}")
+    public List<JobPost> searchByKeyword(@PathVariable("keyword") String keyword) {
+        return service.search(keyword);
+    }
+
     // CONSUMES ONLY XML (, consumes = {"application/xml"})
     @PostMapping(value = "/jobPost")
     // REQUEST BODY FOR POST REQUEST
